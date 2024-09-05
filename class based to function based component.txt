@@ -1,0 +1,22 @@
+1.navbar.js
+remove render function , and make to const navbar=(props)=>{}....., and make this.props to props.
+
+2.spinner.js
+remove render function, const spinner=()=>{}.
+
+3.newsitem.js
+remove render function, const newsitem=(props)=>{}, this.props to props, remove component form import
+
+4.news.js
+in function based component we write defaultprops and proptypes at end of the code. so move to end of the code,and change to functionname.proptyes(news.proptyes),news.defaultprops,   remove render function, and const news=(props)=>{}, import useEffect from react,   remove constructor like change the states(articles,loading,....) by useState like this --> const [articles,setArticles]=useState([]) const [loading,setLoading]=useState(true) const [page,setPage]=useState(1) const [totalResults,settotalResults]=useState(0) , and remove constructor,super,..function after creating useStates.
+make const updatenews=async()=>{} and inside updatenews change setstate to useState --> setArticles(parsedata.articles),settotalResults(parsedata.settotalResults),setLoading(false), make this.props to props replace all, 
+make the total componentdidmount funtion to this-----------> useEffect(()=>{
+    this.updatenews()
+;},[])
+make previousclick funtion to arrow funtion handpreviousclick=async()=>{}....
+add const to capitalize first letter ,handpreviousclick,nextclick
+this.state--remove this 
+in nextclick --> setpage(page+1) and setpage(page-1) in previous
+in updatenews make to this setloading(true)
+in fetchmoredata function make setstate to useState like ---> setArticles(articles.contact(parsedata.articles)),settotalResults(parsedata.totalResults).and remove this.setstate.
+make to const fetchmoredata
